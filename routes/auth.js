@@ -19,10 +19,7 @@ router.get('/signup', function (req, res) {
 
   req.session.inputData = null;
 
-  res.render('signup', {
-    inputData: sessionInputData,
-    csrfToken: req.csrfToken(),
-  });
+  res.render('signup', { inputData: sessionInputData });
 });
 
 router.get('/login', function (req, res) {
@@ -38,10 +35,7 @@ router.get('/login', function (req, res) {
 
   req.session.inputData = null;
 
-  res.render('login', {
-    inputData: sessionInputData,
-    csrfToken: req.csrfToken(),
-  });
+  res.render('login', { inputData: sessionInputData });
 });
 
 router.post('/signup', async function (req, res) {
