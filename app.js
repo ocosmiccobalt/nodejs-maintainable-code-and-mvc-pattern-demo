@@ -27,7 +27,7 @@ app.use(csrf());
 app.use(addCSRFTokenMiddleware);
 app.use(authMiddleware);
 
-app.use(authRoutes);
+app.use(authRoutes); // The order matters! The auth routes should come first.
 app.use(blogRoutes);
 
 app.use(function (error, req, res, next) {
